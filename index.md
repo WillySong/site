@@ -8,6 +8,6 @@ I'm a third-year undergraduate candidate at the University of Toronto: Scarborou
 
 I have previously worked with:
 
-
+* OpenText
 
 This website is a work-in-progress.
