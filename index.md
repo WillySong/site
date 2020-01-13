@@ -10,4 +10,5 @@ I have previously worked with:
 * aUToronto
 * TEDxUTSC
 * OpenText
+
 This website is a work-in-progress.
