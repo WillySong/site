@@ -6,7 +6,9 @@ layout: default
 
 Will be updated as the semester progresses.
 
-Tutorials begin the second week of classes. 
+Come to office hours for answers and fill-ins for code, otherwise email me.
+
+*   [Tutorial 1 Slides](https://docs.google.com/presentation/d/1n9EvrB7oYZbjV5hqc7FSEAoWsqyoJ_PtCyDEJKmSLHU/edit?usp=sharing)
 
 ### Useful external resources:
 
