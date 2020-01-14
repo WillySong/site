@@ -7,8 +7,8 @@ layout: default
 I'm a third-year undergraduate candidate at the University of Toronto: Scarborough.
 
 I have previously worked with:
-* aUToronto
-* TEDxUTSC
-* OpenText
+* [aUToronto](https://www.autodrive.utoronto.ca/)
+* [TEDxUTSC](http://www.tedxutsc.com/)
+* [OpenText](https://www.opentext.com/)
 
 This website is a work-in-progress.
