@@ -20,11 +20,7 @@ layout: default
 
 * Click "Test" again (hopefully it doesn't respond)
 
-* Either:
-
-... Click "Wait" when Quartus crashes
-
-... Wait until 2 error messages appear on the bottom console of the JTAG Chain Debugger window
+* Either: Click "Wait" when Quartus crashes OR Wait until 2 error messages appear on the bottom console of the JTAG Chain Debugger window
 
 * Restart Quartus and repoen your porject
 
