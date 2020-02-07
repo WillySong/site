@@ -4,11 +4,16 @@ layout: default
 
 # Hi! I'm Will
 
-I'm a third-year undergraduate candidate at the University of Toronto: Scarborough.
+I'm a third-year undergraduate at the University of Toronto: Scarborough. I'm pursuing a [specialist in Computer Science, Entrepreneurship stream](https://utsc.calendar.utoronto.ca/specialist-program-computer-science-science).
 
-I have worked with (and still work with):
-* [aUToronto](https://www.autodrive.utoronto.ca/)
-* [TEDxUTSC](http://www.tedxutsc.com/)
-* [OpenText](https://www.opentext.com/)
+I am an incoming SDE Intern @ [Amazon](https://www.amazon.com/) for Summer 2020.
 
-This website is a work-in-progress.
+My current work:
+* [Systems Engineer @ aUToronto](https://www.autodrive.utoronto.ca/)
+* [Teaching Assistant for CSCA48: Introduction to Computer Science II](/CSCA48.html) [and CSCB58: Computer Organization](/CSCB58.html)
+
+My previous work:
+* [Director of Marketing @ TEDxUTSC](http://www.tedxutsc.com/)
+* [QA Extern @ OpenText](https://www.opentext.com/)
+
+This website is still a work-in-progress.
