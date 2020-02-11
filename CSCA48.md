@@ -6,6 +6,8 @@ layout: default
 
 Will be updated as the semester progresses.
 
+[Midterm Review Topic Request Form](https://forms.gle/ABw5HhrDzLPqb9AF8)
+
 Come to office hours for answers and fill-ins for code, otherwise email me.
 
 *   [Tutorial 4 Slides](https://docs.google.com/presentation/d/1iD9PLKfKkzPLBDRj335Wa77dJQ5WcHZHceNLY3H0_LU/edit?usp=sharing)
