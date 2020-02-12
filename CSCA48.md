@@ -10,6 +10,7 @@ Will be updated as the semester progresses.
 
 Come to office hours for answers and fill-ins for code, otherwise email me.
 
+*   [Tutorial 5 Slides](https://docs.google.com/presentation/d/1aAGHS6vIA2hgWxDX8QGwop5BNpVT-GNOCdsl0pf92EI/edit?usp=sharing)
 *   [Tutorial 4 Slides](https://docs.google.com/presentation/d/1iD9PLKfKkzPLBDRj335Wa77dJQ5WcHZHceNLY3H0_LU/edit?usp=sharing)
 *   [Tutorial 3 Slides](https://docs.google.com/presentation/d/1m6VDSzf2LJZrcbEbDUtLYQ5Mml76ALhBT-x1rQ_MLFs/edit?usp=sharing)
 *   [Tutorial 2 Slides](https://docs.google.com/presentation/d/10YSE_OE9KGFSJf4I5OXe6ocJG_3cw_UEEPfH4QiBJ1w/edit?usp=sharing)
