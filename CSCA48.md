@@ -10,6 +10,9 @@ Will be updated as the semester progresses.
 
 Come to office hours for answers and fill-ins for code, otherwise email me.
 
+*   [Tutoiral 8 Slides](https://docs.google.com/presentation/d/1Fn_BPXeCyH-TZOZuRoLlynl12pZwLSQV8Rx8qwESV_I/edit?usp=sharing)
+*   [Tutoiral 7 Slides](https://docs.google.com/presentation/d/1egPt24OtFC-nN2N5pv7a0AqKDE_FAZ3CJhXML7bzcE0/edit?usp=sharing)
+*   [Tutoiral 6 Slides](https://docs.google.com/presentation/d/1aY0LlTUbI88K7Dvm3OY1iTJzu9CuUvpwuRpN8-ogHfc/edit?usp=sharing)
 *   [Tutorial 5 Slides](https://docs.google.com/presentation/d/1aAGHS6vIA2hgWxDX8QGwop5BNpVT-GNOCdsl0pf92EI/edit?usp=sharing)
 *   [Tutorial 4 Slides](https://docs.google.com/presentation/d/1iD9PLKfKkzPLBDRj335Wa77dJQ5WcHZHceNLY3H0_LU/edit?usp=sharing)
 *   [Tutorial 3 Slides](https://docs.google.com/presentation/d/1m6VDSzf2LJZrcbEbDUtLYQ5Mml76ALhBT-x1rQ_MLFs/edit?usp=sharing)
