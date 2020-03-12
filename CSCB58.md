@@ -4,6 +4,24 @@ layout: default
 
 # CSCB58: Computer Organization
 
+## PRA5 Roster
+--------------------
+1 - Team YSL
+2 - Team BLue
+3 - Team MYLQ
+4 - Team Blackpink
+5 - Team DE2Pac
+6 - Team PMBS
+7 - Team CHRP
+8 - Team HSHS
+9 - Team VYX
+10 - Team WJAM
+11 - Team MLH
+12 - Team JLHY
+13 - Team Monty
+14 - Team AtoZ
+15 - Team GLTZ
+
 ## Frequent Problems
 --------------------
 
