@@ -4,10 +4,6 @@ layout: default
 
 # CSCA48: Introduction to Computer Science II
 
-Will be updated as the semester progresses.
-
-[Midterm Review Topic Request Form](https://forms.gle/ABw5HhrDzLPqb9AF8)
-
 Come to office hours for answers and fill-ins for code, otherwise email me.
 
 *   [Tutoiral 8 Slides](https://docs.google.com/presentation/d/1Fn_BPXeCyH-TZOZuRoLlynl12pZwLSQV8Rx8qwESV_I/edit?usp=sharing)
