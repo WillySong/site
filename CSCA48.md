@@ -6,6 +6,7 @@ layout: default
 
 Come to office hours for answers and fill-ins for code, otherwise email me.
 
+*   [Unit 5 Review Slides](https://drive.google.com/file/d/1HyyRqHu9yElwcES-Fh5A31PfGmqX3yOn/view?usp=sharing)
 *   [Tutoiral 8 Slides](https://docs.google.com/presentation/d/1Fn_BPXeCyH-TZOZuRoLlynl12pZwLSQV8Rx8qwESV_I/edit?usp=sharing)
 *   [Tutoiral 7 Slides](https://docs.google.com/presentation/d/1egPt24OtFC-nN2N5pv7a0AqKDE_FAZ3CJhXML7bzcE0/edit?usp=sharing)
 *   [Tutoiral 6 Slides](https://docs.google.com/presentation/d/1aY0LlTUbI88K7Dvm3OY1iTJzu9CuUvpwuRpN8-ogHfc/edit?usp=sharing)
