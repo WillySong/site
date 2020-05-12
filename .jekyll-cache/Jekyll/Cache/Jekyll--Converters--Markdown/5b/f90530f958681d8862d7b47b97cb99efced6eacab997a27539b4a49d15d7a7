@@ -1,0 +1,66 @@
+I"�<h1 id="cscb58-computer-organization">CSCB58: Computer Organization</h1>
+
+<h2 id="pra5-roster">PRA5 Roster</h2>
+<hr />
+<p>1 - Team YSL</p>
+
+<p>2 - Team BLue</p>
+
+<p>3 - Team MYLQ</p>
+
+<p>4 - Team Blackpink</p>
+
+<p>5 - Team DE2Pac</p>
+
+<p>6 - Team PMBS</p>
+
+<p>7 - Team CHRP</p>
+
+<p>8 - Team HSHS</p>
+
+<p>9 - Team VYX</p>
+
+<p>10 - Team WJAM</p>
+
+<p>11 - Team MLH</p>
+
+<p>12 - Team JLHY</p>
+
+<p>13 - Team Monty</p>
+
+<p>14 - Team AtoZ</p>
+
+<p>15 - Team GLTZ</p>
+
+<h2 id="frequent-problems">Frequent Problems</h2>
+<hr />
+
+<h3 id="fails-to-compile">Fails to Compile</h3>
+<hr />
+
+<ul>
+  <li>
+    <p>Close all programmer windows (keep the main window open)</p>
+  </li>
+  <li>
+    <p>On the top menu bar open Tools -&gt; JTAG Chain Debugger</p>
+  </li>
+  <li>
+    <p>Click “Test”</p>
+  </li>
+  <li>
+    <p>Wait 5 seconds</p>
+  </li>
+  <li>
+    <p>Click “Test” again (hopefully it doesn’t respond)</p>
+  </li>
+  <li>
+    <p>Either: Click “Wait” when Quartus crashes OR Wait until 2 error messages appear on the bottom console of the JTAG Chain Debugger window</p>
+  </li>
+  <li>
+    <p>Restart Quartus and repoen your porject</p>
+  </li>
+</ul>
+
+<p>Will be updated as the semester progresses…</p>
+:ET
