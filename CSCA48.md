@@ -4,7 +4,17 @@ layout: default
 
 # CSCA48: Introduction to Computer Science II
 
-Come to office hours for answers and fill-ins for code, otherwise email me.
+### Useful external resources:
+
+Resources I personally recommend. (read: These won't be covered in the course.)
+
+*   [Codingbat.com - General practice coding in Python and Java](https://codingbat.com/python)
+*   [Learn-C.org - A quick crash course on C](https://www.learn-c.org/)
+*   [Repl.it - A quick (and dirty) online IDE I use to quickly write short code](https://repl.it/languages/c)
+
+### Winter 2020 Materials
+
+The following are my slides from the Winter 2020 semester. While this may no longer apply to your course, I'm leaving these slides up here to keep it fair for those who didn't download these resources.
 
 *   [Unit 5 Review Slides](https://drive.google.com/file/d/1HyyRqHu9yElwcES-Fh5A31PfGmqX3yOn/view?usp=sharing)
 *   [Tutoiral 8 Slides](https://docs.google.com/presentation/d/1Fn_BPXeCyH-TZOZuRoLlynl12pZwLSQV8Rx8qwESV_I/edit?usp=sharing)
@@ -16,10 +26,3 @@ Come to office hours for answers and fill-ins for code, otherwise email me.
 *   [Tutorial 2 Slides](https://docs.google.com/presentation/d/10YSE_OE9KGFSJf4I5OXe6ocJG_3cw_UEEPfH4QiBJ1w/edit?usp=sharing)
 *   [Tutorial 1 Slides (Updated 1/16/20)](https://docs.google.com/presentation/d/1n9EvrB7oYZbjV5hqc7FSEAoWsqyoJ_PtCyDEJKmSLHU/edit?usp=sharing)
 
-### Useful external resources:
-
-Resources I personally recommend. (read: These won't be covered in the course.)
-
-*   [Codingbat.com - General practice coding in Python and Java](https://codingbat.com/python)
-*   [Learn-C.org - A quick crash course on C](https://www.learn-c.org/)
-*   [Repl.it - A quick (and dirty) online IDE I use to quickly write short code](https://repl.it/languages/c)
