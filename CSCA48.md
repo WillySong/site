@@ -4,6 +4,10 @@ layout: default
 
 # CSCA48: Introduction to Computer Science II
 
+## Summer 2020 Site
+
+[https://csca48s20.github.io](https://csca48s20.github.io)
+
 ### Useful external resources:
 
 Resources I personally recommend. (read: These won't be covered in the course.)
