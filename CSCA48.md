@@ -6,7 +6,7 @@ layout: default
 
 ## Summer 2020 Site
 
-[https://csca48s20.github.io](https://csca48s20.github.io)
+[https://csca48s20.github.io/tutorials/](https://csca48s20.github.io/tutorials/)
 
 ### Useful external resources:
 
