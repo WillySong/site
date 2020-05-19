@@ -4,6 +4,8 @@ layout: default
 
 # CSCA48: Introduction to Computer Science II
 
+Abstract data types and data structures for implementing them. Linked data structures. Object Oriented Programming. Encapsulation and information-hiding. Testing. Specifications. Analyzing the efficiency of programs. Recursion.
+
 ## Summer 2020 Site
 
 [https://csca48s20.github.io/tutorials/](https://csca48s20.github.io/tutorials/)
