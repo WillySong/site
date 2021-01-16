@@ -8,7 +8,7 @@ I'm a fourth-year undergraduate at the University of Toronto: Scarborough. I'm p
 
 My current work:
 
-*  Teaching Assistant for [CSCA67: Discrete Mathematics](https://www.utsc.utoronto.ca/~bretscher/a67/) and [CSCA48: Introduction to Computer Science II](/CSCA48.html)
+*  Teaching Assistant for [CSCA48: Introduction to Computer Science II](/CSCA48.html) and [CSCB58: Computer Organization](/CSCB58.html).
 
 My previous work:
 * [SDE Intern @ Amazon](https://www.amazon.com/)
