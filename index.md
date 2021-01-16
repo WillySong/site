@@ -11,7 +11,7 @@ My current work:
 *  Teaching Assistant for [CSCA48: Introduction to Computer Science II](/CSCA48.html) and [CSCB58: Computer Organization](/CSCB58.html).
 
 My previous work:
-* [SDE Intern @ Amazon](https://www.amazon.com/)
+* [Software Development Engineer Intern @ Amazon](https://www.amazon.com/)
 * [Systems Engineer @ aUToronto](https://www.autodrive.utoronto.ca/)
 * [Software Developer Intern @ 21IQLabs](https://21iqlabs.com/)
 * [Director of Marketing @ TEDxUTSC](http://www.tedxutsc.com/)
