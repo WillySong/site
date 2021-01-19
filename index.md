@@ -13,8 +13,9 @@ My current work:
 My previous work:
 * [Software Development Engineer Intern @ Amazon](https://www.amazon.com/)
 * [Systems Engineer @ aUToronto](https://www.autodrive.utoronto.ca/)
-* [Software Developer Intern @ 21IQLabs](https://21iqlabs.com/)
+* [Teaching Assistant for CSC/MATA67: Discrete Mathematics](https://www.utsc.utoronto.ca/~bretscher/a67/)
 * [Director of Marketing @ TEDxUTSC](http://www.tedxutsc.com/)
+* [Software Developer Intern @ 21IQLabs](https://21iqlabs.com/)
+* [QA Extern @ OpenText](https://www.opentext.com/)
 * [Content Creator @ UBA.NYC](https://www.instagram.com/ubanyc/)
 * [Intern @ Art Beyond Sight](http://www.artbeyondsight.org/index.php)
-* [QA Extern @ OpenText](https://www.opentext.com/)
