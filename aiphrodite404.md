@@ -8,6 +8,8 @@ Thanks for visiting!
 
 🚧 You visited us a bit early, we're down for maintanence. 🚧
 
+Our servers are down right now, so we're piggy backing off of our founders' personal site.
+
 ## What do we solve?
 
 We increase your organic engagement on social media.
