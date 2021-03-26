@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![AiphroditeLogo](https://guides.github.com/activities/hello-world/branching.png)
+![AiphroditeLogo](Aiphrodite.png)
 
 # Aiphrodite
 
