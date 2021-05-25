@@ -8,7 +8,7 @@ I'm a fourth-year undergraduate at the University of Toronto: Scarborough. I'm p
 
 My current work:
 
-*  Aiphrodite - My startup currently under the [Hatchery's NEST program](https://hatchery.engineering.utoronto.ca/) and (UTSC's Bridge)[https://www.utsc.utoronto.ca/thebridge/welcome-bridge].
+*  Aiphrodite - My startup currently under the [Hatchery's NEST program](https://hatchery.engineering.utoronto.ca/) and [UTSC's Bridge](https://www.utsc.utoronto.ca/thebridge/welcome-bridge).
 *  A yet undisclosed occupation.
 
 My previous work:
