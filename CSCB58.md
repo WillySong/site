@@ -4,7 +4,9 @@ layout: default
 
 # CSCB58: Computer Organization
 
-## PRA5 Roster
+This is depreciated as the course has moved online due to the COVID-19 pandemic. When it is restored to in-person, the following may be applicable to get the DE2 boards working:
+
+<!-- ## PRA5 Roster
 --------------------
 1 - Team YSL
 
@@ -34,7 +36,7 @@ layout: default
 
 14 - Team AtoZ
 
-15 - Team GLTZ
+15 - Team GLTZ -->
 
 ## Frequent Problems
 --------------------
@@ -55,5 +57,3 @@ layout: default
 * Either: Click "Wait" when Quartus crashes OR Wait until 2 error messages appear on the bottom console of the JTAG Chain Debugger window
 
 * Restart Quartus and repoen your porject
-
-Will be updated as the semester progresses...
