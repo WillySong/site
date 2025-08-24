@@ -17,7 +17,7 @@ permalink: /monopoly/
   <div style="display:flex; gap:2em; align-items:flex-start; width:100%; max-width:100%;">
   <div id="transfer-column" style="flex:1; min-width:0;">
     <div id="transfer-module" style="margin-bottom:1em;padding:1em;border:1px solid #ccc;border-radius:6px;background:#f9f9f9;">
-      <h4>Transfer Money</h4>
+      <h4 style="margin:0;">Transfer Money</h4>
       <form id="transfer-form" onsubmit="return false;" style="display:block;">
   <div style="margin-bottom:8px;">
     <label for="from-player">From:</label>
@@ -39,14 +39,12 @@ permalink: /monopoly/
 <div id="players-cards" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;"></div>
   </div>
   <div id="history-area" style="flex:1;min-width:0;max-width:none;">
-    <h3>Transaction History</h3>
     <ul id="history-list" style="list-style-type:none;padding-left:0;max-height:60vh;overflow-y:auto;"></ul>
     <button id="undo-btn" class="buttons" style="display:none;">Undo Last Transaction</button>
   </div>
   <div id="contracts-area" style="flex:1;min-width:0;max-width:none;margin-left:1em;">
-    <h3>Contracts</h3>
     <div id="contract-create-card" style="border:1px solid #ccc;border-radius:6px;background:#f4f4f4;padding:10px;margin-bottom:10px;">
-      <h4>Create Contract</h4>
+      <h4 style="margin:0;">Create Contract</h4>
       <form id="contract-create-form" onsubmit="return false;">
         <label for="contract-name">Name:</label>
         <input type="text" id="contract-name" style="width:90%;margin-bottom:5px;" required><br>
@@ -64,8 +62,6 @@ permalink: /monopoly/
           <option value="#0000FF">Dark Blue</option>
         </select>
         <br>
-        <label for="contract-properties">Properties (comma separated):</label>
-        <input type="text" id="contract-properties" style="width:90%;margin-bottom:5px;"><br>
         <div id="contract-members-area" style="margin-bottom:5px;"></div>
         <div id="contract-expenses-area" style="margin-bottom:5px;"></div>
         <button type="submit" class="buttons">Create Contract</button>
@@ -164,7 +160,6 @@ permalink: /monopoly/
         card.style.padding = '10px';
         card.style.marginBottom = '10px';
         card.innerHTML = `<strong>${contract.name}</strong> <span style="display:inline-block;width:18px;height:18px;background:${contract.color};border-radius:3px;vertical-align:middle;margin-left:4px;"></span><br>
-          Properties: ${contract.properties}<br>
           Members:<br>
           <ul style="padding-left:18px;">
             ${contract.members.map((m, i) => `<li>${players[m.playerIdx].name}: ${m.percent}%</li>`).join('')}
@@ -202,7 +197,6 @@ permalink: /monopoly/
       contractCreateForm.addEventListener('submit', function() {
         var name = document.getElementById('contract-name').value.trim();
         var color = document.getElementById('contract-color').value;
-        var properties = document.getElementById('contract-properties').value.trim();
         var members = [];
         var expenses = [];
         var errorDiv = document.getElementById('contract-create-error');
@@ -230,7 +224,7 @@ permalink: /monopoly/
           errorDiv.textContent = 'Total percent must equal 100.';
           return;
         }
-        contracts.push({ name, color, properties, members, expenses });
+        contracts.push({ name, color, members, expenses });
         renderPlayers();
         renderContracts();
         contractCreateForm.reset();
