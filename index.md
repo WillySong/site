@@ -4,13 +4,15 @@ layout: default
 
 # Hi! I'm Will
 
-I'm a new grad from the University of Toronto: Scarborough holding a [specialist in Computer Science, Entrepreneurship stream](https://utsc.calendar.utoronto.ca/specialist-program-computer-science-science).
+Currently building aiphrodite.ai. Find us there!
 
 My current work:
-*  [Co-Founder @ aiphrodite](https://www.aiphrodite.net/) - My startup currently under the [Hatchery's NEST program](https://hatchery.engineering.utoronto.ca/), [UTSC's Bridge](https://www.utsc.utoronto.ca/thebridge/welcome-bridge), and [UTSC's Hub](https://www.utsc.utoronto.ca/thehub/).
+*  [Co-Founder @ aiphrodite.ai](https://www.aiphrodite.ai/)
 
 My previous work:
+* [SDE @ Amazon](https://www.amazon.com/)
 * [Full Stack Developer @ ODAIA](https://www.odaia.ai/)
+* [B.Sc Cum Laude @ University of Toronto](https://utsc.calendar.utoronto.ca/specialist-program-computer-science-science)
 * [Software Development Engineer Intern @ Amazon](https://www.amazon.com/)
 * [Systems Engineer @ aUToronto](https://www.autodrive.utoronto.ca/)
 * [Resarch Assistant @ UTSC's CSEd Research Symposium](https://www.utsc.utoronto.ca/cms/brian-harrington)

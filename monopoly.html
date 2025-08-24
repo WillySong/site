@@ -1,0 +1,426 @@
+---
+layout: default
+title: Monopoly
+permalink: /monopoly/
+---
+
+
+<div style="width:100%;max-width:100%;margin:0 auto;padding:2em 0;border:0;border-radius:0;">
+  <form id="setup-form" onsubmit="return false;" style="margin-bottom:2em;">
+    <label for="numPlayers">Number of players (2-6): </label>
+    <input type="number" id="numPlayers" min="2" max="6" value="4" required style="width:60px;">
+    <button type="button" class="buttons" id="set-names-btn">Set Names</button>
+    <div id="player-names-area" style="margin-top:1em;display:none;"></div>
+    <button type="submit" class="buttons" id="start-game-btn" style="display:none;">Start Game</button>
+  </form>
+  <div id="banking-area" style="display:none;">
+  <div style="display:flex; gap:2em; align-items:flex-start; width:100%; max-width:100%;">
+  <div id="transfer-column" style="flex:1; min-width:0;">
+    <div id="transfer-module" style="margin-bottom:1em;padding:1em;border:1px solid #ccc;border-radius:6px;background:#f9f9f9;">
+      <h4>Transfer Money</h4>
+      <form id="transfer-form" onsubmit="return false;" style="display:block;">
+  <div style="margin-bottom:8px;">
+    <label for="from-player">From:</label>
+    <select id="from-player" style="min-width:100px;"></select>
+  </div>
+  <div style="margin-bottom:8px;">
+    <label for="to-player">To:</label>
+    <select id="to-player" style="min-width:100px;"></select>
+  </div>
+  <div style="margin-bottom:8px;">
+    <label for="transfer-amount">Amount:</label>
+    <input type="number" id="transfer-amount" min="1" style="width:80px;">
+  </div>
+  <button type="submit" class="buttons">Transfer</button>
+</form>
+      <div id="transfer-error" style="color:red;margin-top:5px;"></div>
+    </div>
+    <!-- Replace the table with player cards -->
+<div id="players-cards" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;"></div>
+  </div>
+  <div id="history-area" style="flex:1;min-width:0;max-width:none;">
+    <h3>Transaction History</h3>
+    <ul id="history-list" style="list-style-type:none;padding-left:0;max-height:60vh;overflow-y:auto;"></ul>
+    <button id="undo-btn" class="buttons" style="display:none;">Undo Last Transaction</button>
+  </div>
+  <div id="contracts-area" style="flex:1;min-width:0;max-width:none;margin-left:1em;">
+    <h3>Contracts</h3>
+    <div id="contract-create-card" style="border:1px solid #ccc;border-radius:6px;background:#f4f4f4;padding:10px;margin-bottom:10px;">
+      <h4>Create Contract</h4>
+      <form id="contract-create-form" onsubmit="return false;">
+        <label for="contract-name">Name:</label>
+        <input type="text" id="contract-name" style="width:90%;margin-bottom:5px;" required><br>
+        <label for="contract-color">Color:</label>
+        <select id="contract-color" style="width:120px;height:30px;margin-bottom:5px;vertical-align:middle;">
+          <option value="#9C9C9C">Gray (Utilities)</option>
+          <option value="#A3A3A3">Black (Railroads)</option>
+          <option value="#8B4513">Brown</option>
+          <option value="#ADD8E6">Light Blue</option>
+          <option value="#FFC0CB">Pink</option>
+          <option value="#FFA500">Orange</option>
+          <option value="#FF0000">Red</option>
+          <option value="#FFFF00">Yellow</option>
+          <option value="#008000">Green</option>
+          <option value="#0000FF">Dark Blue</option>
+        </select>
+        <br>
+        <label for="contract-properties">Properties (comma separated):</label>
+        <input type="text" id="contract-properties" style="width:90%;margin-bottom:5px;"><br>
+        <div id="contract-members-area" style="margin-bottom:5px;"></div>
+        <div id="contract-expenses-area" style="margin-bottom:5px;"></div>
+        <button type="submit" class="buttons">Create Contract</button>
+        <div id="contract-create-error" style="color:red;margin-top:5px;"></div>
+      </form>
+    </div>
+    <div id="contracts-list" style="max-height:50vh;overflow-y:auto;"></div>
+  </div>
+</div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var contracts = [];
+    var setupForm = document.getElementById('setup-form');
+    var numPlayersInput = document.getElementById('numPlayers');
+    var bankingArea = document.getElementById('banking-area');
+    var playersTable = document.getElementById('players-table');
+  var players = [];
+  var history = [];
+
+
+    var setNamesBtn = document.getElementById('set-names-btn');
+    var playerNamesArea = document.getElementById('player-names-area');
+    var startGameBtn = document.getElementById('start-game-btn');
+
+    setNamesBtn.addEventListener('click', function() {
+      var numPlayers = parseInt(numPlayersInput.value);
+      if (isNaN(numPlayers) || numPlayers < 2 || numPlayers > 6) {
+        alert('Please enter a number between 2 and 6.');
+        return;
+      }
+      // Show name inputs
+      playerNamesArea.innerHTML = '';
+      for (var i = 0; i < numPlayers; i++) {
+        playerNamesArea.innerHTML += `<input type="text" id="player-name-${i}" placeholder="Player ${i+1} name" style="margin:2px;width:120px;">`;
+      }
+      playerNamesArea.style.display = 'block';
+      startGameBtn.style.display = 'inline-block';
+    });
+
+    setupForm.addEventListener('submit', function() {
+      var numPlayers = parseInt(numPlayersInput.value);
+      if (isNaN(numPlayers) || numPlayers < 2 || numPlayers > 6) {
+        alert('Please enter a number between 2 and 6.');
+        return;
+      }
+      // Initialize players with names
+      players = [];
+      for (var i = 0; i < numPlayers; i++) {
+        var nameInput = document.getElementById('player-name-' + i);
+        var name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Player ' + (i+1);
+        players.push({ name: name, balance: 1500 });
+      }
+      renderPlayers();
+      bankingArea.style.display = 'block';
+      setupForm.style.display = 'none';
+    });
+
+  function renderPlayers() {
+      // Update transfer dropdowns
+      var fromSelect = document.getElementById('from-player');
+      var toSelect = document.getElementById('to-player');
+      if (fromSelect && toSelect) {
+        fromSelect.innerHTML = '';
+        toSelect.innerHTML = '';
+        // Add bank option
+        var bankOption = document.createElement('option');
+        bankOption.value = 'bank';
+        bankOption.textContent = 'Bank';
+        fromSelect.appendChild(bankOption.cloneNode(true));
+        toSelect.appendChild(bankOption.cloneNode(true));
+        players.forEach(function(player, idx) {
+          var opt = document.createElement('option');
+          opt.value = idx;
+          opt.textContent = player.name;
+          fromSelect.appendChild(opt.cloneNode(true));
+          toSelect.appendChild(opt.cloneNode(true));
+        });
+        // Add contracts to "to" dropdown
+        contracts.forEach(function(contract, cidx) {
+          var opt = document.createElement('option');
+          opt.value = 'contract-' + cidx;
+          opt.textContent = 'Contract: ' + contract.name;
+          toSelect.appendChild(opt);
+        });
+      }
+    function renderContracts() {
+      var contractsList = document.getElementById('contracts-list');
+      contractsList.innerHTML = '';
+      contracts.forEach(function(contract, cidx) {
+        var card = document.createElement('div');
+        card.style.border = '1px solid #ccc';
+        card.style.borderRadius = '6px';
+        card.style.background = '#fff';
+        card.style.padding = '10px';
+        card.style.marginBottom = '10px';
+        card.innerHTML = `<strong>${contract.name}</strong> <span style="display:inline-block;width:18px;height:18px;background:${contract.color};border-radius:3px;vertical-align:middle;margin-left:4px;"></span><br>
+          Properties: ${contract.properties}<br>
+          Members:<br>
+          <ul style="padding-left:18px;">
+            ${contract.members.map((m, i) => `<li>${players[m.playerIdx].name}: ${m.percent}%</li>`).join('')}
+          </ul>
+          <strong>Expense Split (Homes/Hotels):</strong><br>
+          <ul style="padding-left:18px;">
+            ${contract.expenses && contract.expenses.length > 0 ? contract.expenses.map((e, i) => `<li>${players[e.playerIdx].name}: ${e.percent}%</li>`).join('') : '<li>None</li>'}
+          </ul>
+          <button class="buttons" onclick="removeContract(${cidx})">Delete</button>`;
+        contractsList.appendChild(card);
+      });
+    }
+    window.removeContract = function(cidx) {
+      contracts.splice(cidx, 1);
+      renderPlayers();
+      renderContracts();
+      renderHistory();
+    };
+    // Render contract member inputs
+    function renderContractMemberInputs() {
+      var area = document.getElementById('contract-members-area');
+      var expensesArea = document.getElementById('contract-expenses-area');
+      area.innerHTML = '';
+      expensesArea.innerHTML = '<strong>Expense Split (Homes/Hotels):</strong><br>';
+      players.forEach(function(player, idx) {
+        area.innerHTML += `<label>${player.name}: <input type="number" min="0" max="100" id="contract-member-${idx}" value="0" style="width:50px;">%</label><br>`;
+        expensesArea.innerHTML += `<label>${player.name}: <input type="number" min="0" max="100" id="contract-expense-${idx}" value="0" style="width:50px;">%</label><br>`;
+      });
+    }
+
+    // Re-render member inputs when players change
+    var contractCreateForm = document.getElementById('contract-create-form');
+    if (contractCreateForm) {
+      renderContractMemberInputs();
+      contractCreateForm.addEventListener('submit', function() {
+        var name = document.getElementById('contract-name').value.trim();
+        var color = document.getElementById('contract-color').value;
+        var properties = document.getElementById('contract-properties').value.trim();
+        var members = [];
+        var expenses = [];
+        var errorDiv = document.getElementById('contract-create-error');
+        errorDiv.textContent = '';
+        players.forEach(function(player, idx) {
+          var percent = parseInt(document.getElementById('contract-member-' + idx).value);
+          var expensePercent = parseInt(document.getElementById('contract-expense-' + idx).value);
+          if (!isNaN(percent) && percent > 0) {
+            members.push({ playerIdx: idx, percent: percent });
+          }
+          if (!isNaN(expensePercent) && expensePercent > 0) {
+            expenses.push({ playerIdx: idx, percent: expensePercent });
+          }
+        });
+        var totalPercent = members.reduce((sum, m) => sum + m.percent, 0);
+        if (!name) {
+          errorDiv.textContent = 'Contract name required.';
+          return;
+        }
+        if (members.length === 0) {
+          errorDiv.textContent = 'At least one member must have a percentage.';
+          return;
+        }
+        if (totalPercent !== 100) {
+          errorDiv.textContent = 'Total percent must equal 100.';
+          return;
+        }
+        contracts.push({ name, color, properties, members, expenses });
+        renderPlayers();
+        renderContracts();
+        contractCreateForm.reset();
+        renderContractMemberInputs();
+      });
+    }
+      // Replace table rendering with card rendering
+      var playersCards = document.getElementById('players-cards');
+      playersCards.innerHTML = '';
+      players.forEach(function(player, idx) {
+        var card = document.createElement('div');
+        card.style.border = '2px solid #63638B';
+        card.style.borderRadius = '12px';
+        card.style.background = '#fff';
+        card.style.padding = '24px 16px';
+        card.style.margin = '0';
+        card.style.minWidth = '180px';
+        card.style.flex = '1 1 220px';
+        card.style.display = 'flex';
+        card.style.flexDirection = 'column';
+        card.style.alignItems = 'center';
+        card.style.boxShadow = '0 2px 8px rgba(99,99,139,0.08)';
+        card.innerHTML = `
+          <div style="font-size:2em;font-weight:bold;margin-bottom:12px;">${player.name}</div>
+          <div style="font-size:2.2em;color:#201F3F;font-weight:700;margin-bottom:16px;">$${player.balance}</div>
+        `;
+        playersCards.appendChild(card);
+      });
+      renderHistory();
+    }
+    // Transfer money between players, bank, or contract
+    var transferForm = document.getElementById('transfer-form');
+    var transferError = document.getElementById('transfer-error');
+    if (transferForm) {
+      transferForm.addEventListener('submit', function() {
+        var fromVal = document.getElementById('from-player').value;
+        var toVal = document.getElementById('to-player').value;
+        var amount = parseInt(document.getElementById('transfer-amount').value);
+        transferError.textContent = '';
+        if (isNaN(amount) || amount <= 0) {
+          transferError.textContent = 'Enter a positive amount.';
+          return;
+        }
+        if (fromVal === toVal) {
+          transferError.textContent = 'Cannot transfer to the same entity.';
+          return;
+        }
+        // Bank is not tracked, so only modify player balances
+        var fromText = fromVal === 'bank' ? 'Bank' : players[fromVal]?.name;
+        var toText = toVal === 'bank' ? 'Bank' : players[toVal]?.name;
+        var prevFrom = fromVal !== 'bank' && !toVal.startsWith('contract-') ? players[fromVal].balance : null;
+        var prevTo = toVal !== 'bank' && !toVal.startsWith('contract-') ? players[toVal].balance : null;
+        if (fromVal !== 'bank' && !toVal.startsWith('contract-') && players[fromVal].balance < amount) {
+          transferError.textContent = 'Insufficient funds.';
+          return;
+        }
+        if (toVal.startsWith('contract-')) {
+          // Pay to contract, split among members
+          var cidx = parseInt(toVal.split('-')[1]);
+          var contract = contracts[cidx];
+          if (!contract) return;
+          // Check if payer has enough funds
+          if (fromVal !== 'bank' && players[fromVal].balance < amount) {
+            transferError.textContent = 'Insufficient funds.';
+            return;
+          }
+          if (fromVal !== 'bank') players[fromVal].balance -= amount;
+          // Split among members
+          contract.members.forEach(function(m) {
+            var share = Math.round(amount * m.percent / 100);
+            players[m.playerIdx].balance += share;
+          });
+          history.push({
+            text: 'Transfer $' + amount + ' from ' + fromText + ' to contract ' + contract.name + ' (split)',
+            undo: function() {
+              if (fromVal !== 'bank' && prevFrom !== null && prevFrom !== undefined) players[fromVal].balance = prevFrom;
+              contract.members.forEach(function(m) {
+                players[m.playerIdx].balance -= Math.round(amount * m.percent / 100);
+              });
+            }
+          });
+        } else {
+          if (fromVal !== 'bank') players[fromVal].balance -= amount;
+          if (toVal !== 'bank') players[toVal].balance += amount;
+          history.push({
+            text: 'Transfer $' + amount + ' from ' + fromText + ' to ' + toText,
+            undo: function() {
+              if (fromVal !== 'bank') players[fromVal].balance = prevFrom;
+              if (toVal !== 'bank') players[toVal].balance = prevTo;
+            }
+          });
+        }
+        renderPlayers();
+        renderContracts();
+        transferForm.reset();
+      });
+    }
+
+    function renderHistory() {
+      var historyList = document.getElementById('history-list');
+      var undoBtn = document.getElementById('undo-btn');
+      historyList.innerHTML = '';
+      if (history.length === 0) {
+        undoBtn.style.display = 'none';
+        return;
+      }
+      undoBtn.style.display = 'inline-block';
+      history.slice().reverse().forEach(function(item, i) {
+        var li = document.createElement('li');
+        li.textContent = item.text;
+        historyList.appendChild(li);
+      });
+      // Always re-attach undo event listener
+      undoBtn.onclick = function() {
+        if (history.length === 0) return;
+        var last = history.pop();
+        if (last.undo) last.undo();
+        renderPlayers();
+        renderContracts();
+        renderHistory();
+      };
+    }
+
+  renderContracts();
+
+  window.modifyBalance = function(idx, add) {
+      var amountInput = document.getElementById('amount-' + idx);
+      var amount = parseInt(amountInput.value);
+      if (isNaN(amount) || amount <= 0) {
+        alert('Enter a positive amount.');
+        return;
+      }
+      var prev = players[idx].balance;
+      if (add) {
+        players[idx].balance += amount;
+        history.push({
+          text: players[idx].name + ' +$' + amount + ' (was $' + prev + ')',
+          undo: function() { players[idx].balance = prev; }
+        });
+      } else {
+        players[idx].balance -= amount;
+        history.push({
+          text: players[idx].name + ' -$' + amount + ' (was $' + prev + ')',
+          undo: function() { players[idx].balance = prev; }
+        });
+      }
+      renderPlayers();
+    };
+
+    window.luxuryTax = function(idx) {
+      var prev = players[idx].balance;
+      players[idx].balance -= 75;
+      history.push({
+        text: players[idx].name + ' Luxury Tax -$75 (was $' + prev + ')',
+        undo: function() { players[idx].balance = prev; }
+      });
+      renderPlayers();
+    };
+
+    window.incomeTaxFlat = function(idx) {
+      var prev = players[idx].balance;
+      players[idx].balance -= 200;
+      history.push({
+        text: players[idx].name + ' Income Tax -$200 (was $' + prev + ')',
+        undo: function() { players[idx].balance = prev; }
+      });
+      renderPlayers();
+    };
+
+    window.incomeTaxPercent = function(idx) {
+      var prev = players[idx].balance;
+      var deduction = Math.floor(players[idx].balance * 0.10);
+      players[idx].balance -= deduction;
+      history.push({
+        text: players[idx].name + ' Income Tax -10% (-$' + deduction + ') (was $' + prev + ')',
+        undo: function() { players[idx].balance = prev; }
+      });
+      renderPlayers();
+    };
+
+    window.passGo = function(idx) {
+      var prev = players[idx].balance;
+      players[idx].balance += 200;
+      history.push({
+        text: players[idx].name + ' Pass Go +$200 (was $' + prev + ')',
+        undo: function() { players[idx].balance = prev; }
+      });
+      renderPlayers();
+    };
+
+  // Remove old undo event listener (now handled in renderHistory)
+  });
+</script>
